@@ -1,0 +1,104 @@
+/*Remove rounded edges, except on the cart badge*/
+* {
+  border-radius: 0 !important;
+}
+#number-in-cart {
+	border-radius: 10px !important;
+	background-color: #e7e7e7;
+	color: #337ab7;
+}
+/*Set the 'Logo' to Courier*/
+#title {
+	font-family: "Courier New", Courier, monospace;
+	/*
+	margin: 0;
+	height: 50px;
+	vertical-align: middle;
+	display: table-cell;
+	*/
+}
+/*Styling the Navbar*/
+.navbar-default {
+	background-color: #337ab7;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #e7e7e7;
+}
+.navbar-default .navbar-brand {
+    color: #e7e7e7;
+}
+.navbar-default .navbar-brand:hover{
+    color: #7ECFFF;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	color: #337ab7;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #e7e7e7;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #7ECFFF;
+}
+
+/* */
+.item {
+	height: 225px;
+	width: 225px;
+	margin: 15px;
+	padding: 0;
+}
+#clothes {
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+}
+footer {
+	text-align: center;
+	height: 100px;
+}
+.bottomaligned {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.clothes-modal {
+	padding-bottom: 0;
+}
+.to-the-right {
+	padding: 8px;
+	text-align: left;
+}
+.price-table {
+	margin: 0;
+	
+}
+.popover-content {
+	text-align: center;
+}
+
+.item img {
+	border: 1px solid #DDD;
+	box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+.in-the-pop {
+	margin-bottom: 5px;
+}
+#back-drop {
+	width: 70%;
+	margin: 0 auto;
+	/*background-color: #E9E9E9;
+	box-shadow: 0 5px 15px rgba(0,0,0,.2);*/
+}
+#fun-pic {
+	background-image: url("background.png");
+}
+nav.navbar.navbar-default {
+	margin-bottom: 0;
+}
+code {
+	color: black;
+}
+#login {
+	padding: 4px 20px;
+}
