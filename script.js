@@ -21,3 +21,22 @@ function calculateTotal() {
 function addToCart() {
 	document.getElementById("number-in-cart").innerText = document.getElementById("xs").value;
 }
+
+function createAccount(){
+	var user = {
+		name: document.getElementById('name').value,
+		password: document.getElementById('password').value,
+		email: document.getElementById('email').value,
+	}
+
+	$.ajax({
+	  type: "POST",
+	  url: '/users',
+	  data: {user:user}
+	});
+
+	document.getElementById('name').value = ''
+	document.getElementById('password').value=''
+	document.getElementById('email').value  = ''
+
+} 
