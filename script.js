@@ -38,5 +38,31 @@ function createAccount(){
 	document.getElementById('name').value = ''
 	document.getElementById('password').value=''
 	document.getElementById('email').value  = ''
+<<<<<<< HEAD
 
 } 
+=======
+} 
+
+function setDescription(item) {
+    console.log("Setting Description...");
+    switch(item) {
+        case 0:
+            document.getElementById("item-title").innerHTML = "T-shirt";
+            document.getElementById("item-description").innerHTML = "A fancy shirt, so fancy";
+            break;
+        case 1:
+            document.getElementById("item-title").innerHTML = "Hoodie";
+            document.getElementById("item-description").innerHTML = "Check this out yo!";
+            break;
+        case 2:
+            document.getElementById("item-title").innerHTML = "Hat";
+            document.getElementById("item-description").innerHTML = "Flip yo' lid";
+            break;
+        case 3:
+            document.getElementById("item-title").innerHTML = "T-shirt";
+            document.getElementById("item-description").innerHTML = "Not the same as the first one, but still dank";
+            break;
+    }
+}
+>>>>>>> 8c9b137ed0060f3a4d714451fc602f86d20961c2

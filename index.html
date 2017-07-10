@@ -99,14 +99,14 @@
 
         <!-- Clothes Modal -->
         <div class="modal fade" id="buyItem" tabindex="-1" role="dialog" aria-labelledby="aLabel">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog" role="document" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">T-Shirt</h4>
+                        <h4 class="modal-title" id="item-title">test</h4>
                     </div>
                     <div class="modal-body clothes-modal">
-                        <p>A fancy shirt, so fancy</p>
+                        <p id="item-description">test</p>
                         <table class="table table-striped price-table">
                             <tbody>
                                 <col width="50%">
@@ -228,27 +228,26 @@
                     <div class="row">
                         <div class="col-sm-6 item">
                             <img src="https://riverisland.scene7.com/is/image/RiverIsland/293140_main?$CrossSellProductPage300$" alt="shirt" style="width: 225px">
-                            <button type="button" class="btn btn-primary btn-block bottomaligned" data-toggle="modal" data-target="#buyItem">Buy Now!</button>
+                            <button type="button" class="btn btn-primary btn-block bottomaligned" data-toggle="modal" data-target="#buyItem" onclick="setDescription(0);">Buy Now!</button>
                         </div>
                         <div class="col-sm-6 item">
                             <img src="https://riverisland.scene7.com/is/image/RiverIsland/300003_main?$CrossSellProductPage514$" alt="hoodie" style="width: 225px">
-                            <button type="button" class="btn btn-primary btn-block bottomaligned">Buy Now!</button>
+                            <button type="button" class="btn btn-primary btn-block bottomaligned" data-toggle="modal" data-target="#buyItem" onclick="setDescription(1);">Buy Now!</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 item">
                             <img src="https://cdn.shopify.com/s/files/1/0898/6034/products/blnodh0010a.jpg?v=1492667272" alt="hat" style="width: 225px">
-                            <button type="button" class="btn btn-primary btn-block bottomaligned">Buy Now!</button>
+                            <button type="button" class="btn btn-primary btn-block bottomaligned" data-toggle="modal" data-target="#buyItem" onclick="setDescription(2);">Buy Now!</button>
                         </div>
                         <div class="col-sm-6 item">
                             <img src="https://image.spreadshirtmedia.com/image-server/v1/productTypes/210/views/1/appearances/228,width=300,height=300,backgroundColor=ffffff.jpg" alt="shirt" style="width: 225px">
-                            <button type="button" class="btn btn-primary btn-block bottomaligned">Buy Now!</button>
+                            <button type="button" class="btn btn-primary btn-block bottomaligned" data-toggle="modal" data-target="#buyItem" onclick="setDescription(3);">Buy Now!</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <hr>
         <!-- About section -->
         <!--
