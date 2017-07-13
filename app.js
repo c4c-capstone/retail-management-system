@@ -26,7 +26,7 @@ var users = require('./routes/users_r.js');
 app.use('/users', users);
 app.get('/', function(req, res){
 //	res.json({msg:'test'});
-	res.sendFile('./public/index.html')
+	res.sendFile(__dirname + '/public/index.html')
 });
 
 // START THE SERVER
