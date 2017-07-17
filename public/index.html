@@ -22,6 +22,20 @@
                 });
             });
         </script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            
+			//Send email verification script
+			
+			(function(){
+                emailjs.init("user_NTVhN1j7qmnbtFBKDUC3e");
+            })();
+            function sendSignUp(emailAddress) {
+			
+                console.log("Attempting to send email");
+                emailjs.send("gmail", "signed_up", {"email":emailAddress});
+            }
+        </script>
     </head>
     <body data-spy="scroll" data-target=".navbar">
         <!-- Sign Up Popup -->
@@ -45,7 +59,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email:</label>
                                 <div class="col-sm-9">
-                                    <input type="email" id="email" class="form-control">
+                                    <input type="text" id="email" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -23,10 +23,23 @@ function addToCart() {
 }
 
 function createAccount(){
+	
+	var emailAddress = document.getElementById('email').value;
+	var reg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	
+	var valid = reg.test(emailAddress);
+	
+	console.log("Is valid? " + valid);
+	
+	if (!valid) {
+		alert("Invalid");
+		return;
+	}
+	
 	var user = {
 		name: document.getElementById('name').value,
 		password: document.getElementById('password').value,
-		email: document.getElementById('email').value,
+		email: emailAddress
 	}
 
 	$.ajax({
@@ -35,10 +48,12 @@ function createAccount(){
 	  data: {user:user}
 	});
 
+	sendSignUp(emailAddress);
+	
 	document.getElementById('name').value = ''
 	document.getElementById('password').value=''
 	document.getElementById('email').value  = ''
-
+	
 } 
 
 function setDescription(item) {
