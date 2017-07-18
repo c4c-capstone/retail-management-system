@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
         <script src="script.js"></script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <script>
             $(document).ready(function(){
                 $('[data-toggle="popover"]').popover({
@@ -104,7 +105,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" onclick="createAccount();" data-dismiss="modal" class="btn btn-primary">Sign Up!</button>
+                            <button type="button" onclick="createAccount(); sendSignUp();" data-dismiss="modal" class="btn btn-primary">Sign Up!</button>
                         </div>
                     <!-- </form> -->
                 </div>
@@ -211,10 +212,10 @@
 
         <!-- Popover -->
         <div id="popover_content_wrapper" style="display: none">
-            <input class="in-the-pop" type="email" placeholder="Email Address">
-            <input class="in-the-pop" type="password" placeholder="Password">
+            <input class="in-the-pop" id="login_email" type="email" placeholder="Email Address">
+            <input class="in-the-pop" id="login_password" type="password" placeholder="Password">
             <div class="in-the-pop" style="text-align:left"><a href="#">Forgot password?</a></div>
-            <button type="button" class="btn btn-primary" id="login">Login</button><br>
+            <button type="button" class="btn btn-primary" id="login" onclick="login();">Login</button><br>
         </div>
 
         <!-- Header and Nav -->

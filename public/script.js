@@ -36,23 +36,41 @@ function createAccount(){
 		return;
 	}
 	
-	var user = {
+	var customer = {
 		name: document.getElementById('name').value,
+		email: document.getElementById('email').value,
 		password: document.getElementById('password').value,
-		email: emailAddress
+		phone: document.getElementById('phone').value,
+		address: {
+			street: document.getElementById('street').value,
+			apt: document.getElementById('apt').value,
+			city: document.getElementById('city').value,
+			state: document.getElementById('state').value,
+			zip: document.getElementById('zip').value,
+		}
+
 	}
 
 	$.ajax({
-	  type: "POST",
-	  url: '/users',
-	  data: {user:user}
-	});
+		type: "POST",
+		url: '/customer',
+		data: JSON.stringify({customer:customer}),
+		contentType:"application/json; charset=utf-8",
+    	dataType:"json",
+    	success: function(res){
+    	  document.getElementById('name').value = ''
+    	  document.getElementById('email').value  = ''
+    	  document.getElementById('password').value = ''
+    	  document.getElementById('phone').value = ''
+    	  document.getElementById('street').value = ''
+    	  document.getElementById('apt').value = ''
+    	  document.getElementById('city').value = ''
+    	  document.getElementById('state').value = ''
+    	  document.getElementById('zip').value = ''
 
-	sendSignUp(emailAddress);
+    	}
 	
-	document.getElementById('name').value = ''
-	document.getElementById('password').value=''
-	document.getElementById('email').value  = ''
+	});
 	
 } 
 
@@ -76,4 +94,28 @@ function setDescription(item) {
             document.getElementById("item-description").innerHTML = "Not the same as the first one, but still dank";
             break;
     }
+}
+
+function login(){
+	$.ajax({
+		type: "POST",
+		url: '/customer/login',
+		data: JSON.stringify({
+			email: document.getElementById('login_email').value,
+			password: document.getElementById('login_password').value
+		}),
+		contentType:"application/json; charset=utf-8",
+    	dataType:"json",
+    	success: function(res){
+    		console.log(res);
+    	//	clearLogin();
+    	},
+    	err: function(err){
+    		console.log(err + "duh");
+    	} 
+	});
+	// function clearLogin(){
+	// 	 document.getElementById('email').value  = ''
+ //    	 document.getElementById('password').value = ''
+	// }
 }

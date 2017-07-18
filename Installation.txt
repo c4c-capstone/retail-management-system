@@ -1,6 +1,0 @@
-need to be installed
--mongo
--mongod
--express
--node
--mongoose

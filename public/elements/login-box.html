@@ -1,0 +1,45 @@
+<link rel="import" href="/polymer/polymer.html">
+<link rel="import" href="/iron-ajax/iron-ajax.html">
+<link rel="import" href="/paper-button/paper-button.html">
+<dom-module id="login-box">
+<template>
+	<input type="email" value="{{email::change}}" placeholder="email">
+	<input type="password" value="{{password::change}}" placeholder="password">
+
+    <paper-button raised on-click="submitForm">Submit</paper-button>
+    <iron-ajax
+    	method="POST"
+    	url="/customer/login"
+    	id="loginRequest"
+    	on-response="response"
+    >
+    </iron-ajax>
+
+    
+            <!-- <div class="in-the-pop" style="text-align:left"><a href="#">Forgot password?</a></div>
+            <button type="button" class="btn btn-primary" id="login" on-click="login">Login</button><br> -->
+
+</template>
+<script type="text/javascript">
+	Polymer({
+		is:'login-box',
+		ready:function(){
+			console.log('login-box ready')
+		},
+		response:function(res){
+			console.log(res)
+		},
+		computeBody:function(email,password){
+			return {
+				email:email,
+				password:password
+			}
+		},
+		submitForm:function() {
+			console.log(JSON.stringify({email:this.email,password:this.password}))
+			this.$.loginRequest.body=JSON.stringify({email:this.email,password:this.password});
+			this.$.loginRequest.generateRequest();
+    }
+	})
+</script>
+</dom-module>

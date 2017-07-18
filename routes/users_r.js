@@ -1,38 +1,59 @@
 var express = require('express'),
 router = express.Router(),
-User = require('../schema_models/users.js');
+Customer = require('../schema_models/customer.js'),
+Address = require('../schema_models/address.js');
 
 router.post('/',function(req,res){
-	console.log(req.body)
-	var user = new User(req.body.user);
-	user.save(function(err,user){
-		if(err)
-			console.log(err)
-		res.json(user);
-	})
+	var customer = req.body.customer;
+	new Address(customer.address)
+		.save()
+		.then(function(address){
+			customer.address = address;
+			return new Customer(customer).save();
+		})
+		.then(function(customer){
+			res.json(customer);
+		})
+		.catch(function(err){
+			console.log(err);
+		});
+	
 })
 
 router.get('/',function(req,res){
-	User.find(function(err,user){
-		if(err)
+	Customer
+		.find()
+		.populate('address')
+		.exec()
+		.then(function(cust){
+			res.json(cust)
+		})
+		.catch(function(err){
 			console.log(err)
-		res.json(user);
-	})
+		});
 })
 
-router.get('/login',function(req,res){
-	User.findOne({email: req.body.user.email},function(err,user){
-		if(err){
+router.post('/login',function(req,res){
+	console.log(req.body)
+	Customer
+		.findOne({email: req.body.email})
+		//.populate('address')
+		.exec()
+		.then(function(cust){
+			console.log(cust)
+			if(cust.password === req.body.cust.password){
+				res.json(cust);
+			}
+			else{
+				console.log('Seriously');
+				res.sendStatus(403)
+			}
+		})
+		.catch(function(err){
 			console.log(err)
-			res.send(403)
-		}
-		else if(user.password === req.body.user.password){
-			res.send(200);
-		}
-		else{
-			res.send(403)
-		}
-	})
+			console.log('Seriously Bro')
+			res.sendStatus(403)
+		});
 })
 
 module.exports = router;

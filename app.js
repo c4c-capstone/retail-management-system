@@ -10,7 +10,7 @@ var app        = express();
 // configure body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(express.static('bower-components'))
+app.use(express.static('bower_components'))
 app.use(express.static('public'))		//
 app.use(function(req,res,next){
 	console.log('something happened');
@@ -21,12 +21,13 @@ var port     = process.env.PORT || 8080; // set our port
 // CONNECT TO DB
 //==============================================================================
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/c4c_capstone');
-var users = require('./routes/users_r.js');
-app.use('/users', users);
+var customer = require('./routes/users_r.js');
+app.use('/customer', customer);
 app.get('/', function(req, res){
 //	res.json({msg:'test'});
-	res.sendFile(__dirname + '/public/index.html')
+	res.sendFile('./public/index.html')
 });
 
 // START THE SERVER
