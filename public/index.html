@@ -14,13 +14,7 @@
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <script>
             $(document).ready(function(){
-                $('[data-toggle="popover"]').popover({
-                    placement: "bottom",
-                    html: true,
-                    content: function() {
-                        return $('#popover_content_wrapper').html();
-                    }
-                });
+                addPopOver();
             });
         </script>
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -215,12 +209,12 @@
         </div>
 
         <!-- Popover -->
-        <div id="popover_content_wrapper" style="display: none">
+        <!-- <div id="popover_content_wrapper" style="">
             <input class="in-the-pop" id="login_email" type="email" placeholder="Email Address">
             <input class="in-the-pop" id="login_password" type="password" placeholder="Password">
             <div class="in-the-pop" style="text-align:left"><a href="#">Forgot password?</a></div>
             <button type="button" class="btn btn-primary" id="login" onclick="login();">Login</button><br>
-        </div>
+        </div> -->
 
         <!-- Header and Nav -->
         <!--<h1 id="title">&lt;clothing-4-coders&gt;</h1>-->
@@ -235,8 +229,8 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge" id="number-in-cart"></span></a></li>
-                    <li><a href="#" role="button" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="signup-btn"><a href="#" role="button" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li id="nav-login"><a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </nav>

@@ -49,7 +49,11 @@ router.post('/login',function(req,res){
 		.populate('address')
 		.exec()
 		.then(function(cust){
+<<<<<<< HEAD
 			console.log(cust);
+=======
+			console.log(cust)
+>>>>>>> upstream/loginLogout
 			if(cust.password === req.body.password){
 				res.json(cust);
 			}
