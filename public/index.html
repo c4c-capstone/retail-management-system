@@ -33,7 +33,7 @@
             function sendSignUp(emailAddress) {
 			
                 console.log("Attempting to send email");
-                emailjs.send("gmail", "signed_up", {"email":emailAddress});
+                //emailjs.send("gmail", "signed_up", {"email":emailAddress});
             }
         </script>
     </head>
@@ -47,7 +47,7 @@
                         <h4 class="modal-title" id="myModalLabel">Create an Account</h4>
                     </div>
                     <!-- <form> -->
-                        <div class="modal-body">
+                        <div class="modal-body sign-up">
                             <!-- Create Account form -->
 
                             <div class="form-group row">
@@ -84,11 +84,11 @@
                                     <input type="text" id="apt" class="form-control">
                                     <p class="form-text text-muted">Address Line 2</p>
                                     <div class="row">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                             <input type="text" id="city" class="form-control">
                                             <p class="form-text text-muted">City</p>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input type="text" id="state" class="form-control" maxlength="2">
                                             <p class="form-text text-muted">State</p>
                                         </div>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" onclick="createAccount();" data-dismiss="modal" class="btn btn-primary">Sign Up!</button>
+                            <button type="button" onclick="createAccount();" class="btn btn-primary" data-dismiss="modal" id="sign-up-button">Sign Up!</button>
                         </div>
                     <!-- </form> -->
                 </div>

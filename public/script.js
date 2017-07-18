@@ -32,7 +32,8 @@ function createAccount(){
 	console.log("Is valid? " + valid);
 	
 	if (!valid) {
-		alert("Invalid");
+		alert("Invalid Email Address");
+		document.getElementById('email').value = '';
 		return;
 	}
 	
@@ -54,6 +55,7 @@ function createAccount(){
 	document.getElementById('password').value=''
 	document.getElementById('email').value  = ''
 	
+	alert("Account Created!");
 } 
 
 function setDescription(item) {
