@@ -32,7 +32,8 @@ function createAccount(){
 	console.log("Is valid? " + valid);
 	
 	if (!valid) {
-		alert("Invalid");
+		alert("Invalid Email Address");
+		document.getElementById('email').value = '';
 		return;
 	}
 	
@@ -72,6 +73,7 @@ function createAccount(){
 	
 	});
 	
+	alert("Account Created!");
 } 
 
 function setDescription(item) {
