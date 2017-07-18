@@ -37,11 +37,11 @@ router.post('/login',function(req,res){
 	console.log(req.body)
 	Customer
 		.findOne({email: req.body.email})
-		//.populate('address')
+		.populate('address')
 		.exec()
 		.then(function(cust){
 			console.log(cust)
-			if(cust.password === req.body.cust.password){
+			if(cust.password === req.body.password){
 				res.json(cust);
 			}
 			else{
