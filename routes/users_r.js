@@ -8,8 +8,9 @@ router.post('/',function(req,res){
 	Customer.findOne({email:req.body.customer.email}, function(err, customer){
 		if(err)
 			console.log(err);
-		if(customer)
+		if(customer){
 			res.json({error:'email exists'});
+		}
 		if(!err && !customer){
 			customer = req.body.customer;
 		new Address(customer.address)

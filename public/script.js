@@ -71,12 +71,13 @@ function createAccount(){
     	  document.getElementById('city').value = ''
     	  document.getElementById('state').value = ''
     	  document.getElementById('zip').value = ''
+    	  //alert("Account Created!");	  
 
     	}
 	
 	});
 	
-	alert("Account Created!");
+	
 } 
 
 function setDescription(item) {
@@ -138,7 +139,9 @@ function logout(){
 	var event = new Event('user-status-change');
 	window.dispatchEvent(event);
 }
-
+// function displayErr(){
+// 	return JSON.parse()
+// }
 function setUser(user){
 	window.sessionStorage.setItem('user',JSON.stringify(user));
 }
