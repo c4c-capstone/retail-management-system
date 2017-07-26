@@ -106,3 +106,18 @@ code {
 	padding-left: 40px;
     padding-right: 40px;
 }
+#account-details {
+    width:450px;
+    margin: 0 auto;
+}
+#user {
+    text-align: center;
+    margin: 0 auto;
+}
+#icon {
+    /*
+    border-radius: 100px;
+    box-shadow: 0px 0px 2px #111;
+    */
+    font-size: 50px;
+}
