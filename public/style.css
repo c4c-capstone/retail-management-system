@@ -108,7 +108,8 @@ code {
 }
 #account-details {
     width:450px;
-    margin: 0 auto;
+    margin: 50px auto;
+    padding: 0;
 }
 #user {
     text-align: center;
@@ -120,4 +121,12 @@ code {
     box-shadow: 0px 0px 2px #111;
     */
     font-size: 50px;
+}
+.no-pad {
+    padding: 0;
+}
+/*
+#delete-this{
+    text-align: center;
+    margin-top: 50px;
 }
