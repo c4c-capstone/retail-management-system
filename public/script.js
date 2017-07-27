@@ -25,6 +25,14 @@ function addToCart() {
 	document.getElementById("number-in-cart").innerText = document.getElementById("xs").value;
 }
 
+function displayFailMessage() {
+	alert("Please use a valid email address!");
+}
+
+function displaySuccessMessage() {
+  	alert("Account created successfully!");
+}
+
 function createAccount(){
 
 	var emailAddress = document.getElementById('email').value;
@@ -35,9 +43,13 @@ function createAccount(){
 	console.log("Is valid? " + valid);
 
 	if (!valid) {
-		alert("Invalid Email Address");
+		displayFailMessage();
 		document.getElementById('email').value = '';
 		return;
+	}
+		else {
+			displaySuccessMessage();
+			return;
 	}
 
 	var customer = {
@@ -131,6 +143,10 @@ function login(){
 	}
 }
 
+function displayLogoutMessage() {
+	alert("Logout Successful!");
+}
+
 function logout(){
 	clearUser();
 	//change logout to login
@@ -173,10 +189,6 @@ function showSignUp(){
 
 function hideSignUp(){
 	document.getElementById('signup-btn').style['display']='none'
-}
-
-function displaySuccessMessage(){
-	alert('Does not work');
 }
 
 function addPopOver(){
