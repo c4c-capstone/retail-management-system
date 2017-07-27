@@ -26,20 +26,20 @@ function addToCart() {
 }
 
 function createAccount(){
-	
+
 	var emailAddress = document.getElementById('email').value;
 	var reg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-	
+
 	var valid = reg.test(emailAddress);
-	
+
 	console.log("Is valid? " + valid);
-	
+
 	if (!valid) {
 		alert("Invalid Email Address");
 		document.getElementById('email').value = '';
 		return;
 	}
-	
+
 	var customer = {
 		name: document.getElementById('name').value,
 		email: document.getElementById('email').value,
@@ -71,14 +71,14 @@ function createAccount(){
     	  document.getElementById('city').value = ''
     	  document.getElementById('state').value = ''
     	  document.getElementById('zip').value = ''
-    	  //alert("Account Created!");	  
+    	  //alert("Account Created!");
 
     	}
-	
+
 	});
-	
-	
-} 
+
+
+}
 
 function setDescription(item) {
     console.log("Setting Description...");
@@ -123,7 +123,7 @@ function login(){
     	},
     	err: function(err){
     		console.log(err + "duh");
-    	} 
+    	}
 	});
 	function clearLogin(){
 		 document.getElementById('email').value  = ''
@@ -156,7 +156,7 @@ function clearUser(){
 
 function isUserLoggedIn(){
 	return getUser();
-} 
+}
 
 window.addEventListener('user-status-change',function(){
 	if(isUserLoggedIn()){
@@ -173,6 +173,10 @@ function showSignUp(){
 
 function hideSignUp(){
 	document.getElementById('signup-btn').style['display']='none'
+}
+
+function displaySuccessMessage(){
+	alert('Does not work');
 }
 
 function addPopOver(){
