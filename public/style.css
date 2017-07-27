@@ -125,8 +125,10 @@ code {
 .no-pad {
     padding: 0;
 }
-/*
-#delete-this{
+#historical {
     text-align: center;
-    margin-top: 50px;
+    margin: 25px auto;
+}
+#savin {
+    float: right;
 }
