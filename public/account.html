@@ -1,150 +1,172 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Account Details</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-        <script src="script.js"></script>
-        <script src="account-script.js"></script>
-    </head>
-    <body>
-        <!-- Delete modal -->
-        <div id="delete-confirm" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Delete Account</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure you want to delete your account?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- New Password Modal -->
-        <div id="change-password" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Change Password</h4>
-                    </div>
-                    <div class="modal-body">
-                        <label class="col-form-label">New Password:</label>
-                        <input id="name" type="text" class="form-control"><br>
-                        <label class="col-form-label">Confirm Password:</label>
-                        <input id="name" type="text" class="form-control">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- #NavLife -->
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" id="title">&lt;clothing-4-coders&gt;</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge" id="number-in-cart"></span></a></li>
-                    <li id="signup-btn"><a href="#" role="button" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li id="nav-login"><a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div id="savin">
-            <button class="btn btn-primary">Save</button><br>
-            <button class="btn btn-default">Cancel</button>
-        </div>
-        <div id="account-details">
-            <div class="row">
-                <div id="user">
-                    <span id="icon" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="form-group row">
+	<head>
+		<title>Account Details</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<script src="script.js"></script>
+		<script src="account-script.js"></script>
+	</head>
+	<body>
+		<!-- Delete modal -->
+		<div id="delete-confirm" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Delete Account</h4>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete your account?</p>
+					</div>
+					<div class="modal-footer">
+						<button id="delete-account-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-account-alert" data-dismiss="modal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- New Password Modal -->
+		<div id="change-password" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Change Password</h4>
+					</div>
+					<div class="modal-body">
+						<label class="col-form-label">New Password:</label>
+						<input id="name" type="text" class="form-control"><br>
+						<label class="col-form-label">Confirm Password:</label>
+						<input id="name" type="text" class="form-control">
+					</div>
+					<div class="modal-footer">
+						<button id="save-password" type="button" class="btn btn-primary" data-toggle="modal" data-target="#save-details-success" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                <h3 style="text-align: center;">Nunya Bizness</h3>
+		<!-- #NavLife -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html" id="title">&lt;clothing-4-coders&gt;</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Shop</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge" id="number-in-cart"></span></a></li>
+					<li id="signup-btn"><a href="#" role="button" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li id="nav-login"><a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div>
+		</nav>
 
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" style="
-                                                              padding-left: 0px;
-                                                              ">Email:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="email" class="form-control detes">
-                </div>
-            </div>
+		<div id="account-details">
+			<div class="row">
+				<div id="user">
+					<span id="icon" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				</div>
+			</div>
+			<div class="form-group row">
 
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" style="
-                                                              padding-left: 0px;
-                                                              ">Phone:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="phone" class="form-control detes">
-                </div>
-            </div>
-            <hr>
-            <!-- Where you livin'? -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" style="
-                                                              padding-left: 0px;
-                                                              ">Address:</label>
-                <div class="col-sm-9">
-                    <input type="text" id="street" class="form-control detes">
-                    <p class="form-text text-muted">Address Line 1</p>
-                    <input type="text" id="apt" class="form-control detes">
-                    <p class="form-text text-muted">Address Line 2</p>
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <input type="text" id="city" class="form-control detes">
-                            <p class="form-text text-muted">City</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" id="state" class="form-control detes" maxlength="2">
-                            <p class="form-text text-muted">State</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <input type="text" id="zip" class="form-control detes" maxlength="5">
-                            <p class="form-text text-muted">Zipcode</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="historical">
-                <a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> View Order History</a>
-            </div>
-            <div class="row">
-                <button id="changeroo" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#change-password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Change Password</button>
-            </div>
-            <div id="delete-this" class="row">
-                <div class="col-sm-6 no-pad">
-                    <button id="edit" class="btn btn-default btn-block"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Details</button>
-                </div>
-                <div class="col-sm-6 no-pad">
-                    <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#delete-confirm"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span> Delete Account</button>
-                </div>
-            </div>
-        </div>
-    </body>
+				<h3 style="text-align: center;">Nunya Bizness</h3>
+
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label" style="
+															  padding-left: 0px;
+															  "><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email:</label>
+				<div class="col-sm-9">
+					<input type="text" id="email" class="form-control detes">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label" style="
+															  padding-left: 0px;
+															  "><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Phone:</label>
+				<div class="col-sm-9">
+					<input type="text" id="phone" class="form-control detes">
+				</div>
+			</div>
+			<hr>
+			<!-- Where you livin'? -->
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label" style="
+															  padding-left: 0px;
+															  "><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Address:</label>
+				<div class="col-sm-9">
+					<input type="text" id="street" class="form-control detes">
+					<p class="form-text text-muted">Address Line 1</p>
+					<input type="text" id="apt" class="form-control detes">
+					<p class="form-text text-muted">Address Line 2</p>
+					<div class="row">
+						<div class="col-sm-9">
+							<input type="text" id="city" class="form-control detes">
+							<p class="form-text text-muted">City</p>
+						</div>
+						<div class="col-sm-3">
+							<input type="text" id="state" class="form-control detes" maxlength="2">
+							<p class="form-text text-muted">State</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<input type="text" id="zip" class="form-control detes" maxlength="5">
+							<p class="form-text text-muted">Zipcode</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Alerts -->
+			<div class="modal fade success-alert" id="save-details-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="alert alert-success" role="alert"><span id="success-message"></span></div>
+			</div>
+			<div class="modal fade" id="delete-account-alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="alert alert-danger" role="alert">Your account has been deleted</div>
+			</div>
+
+			<!-- Edit Details Save/Close buttons-->
+			<div id="savin" class="row">
+				<div class="col-sm-6 no-pad">
+					<button id="save-account-details" class="btn btn-primary btn-block" data-toggle="modal" data-target="#save-details-success"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+				</div>
+				<div class="col-sm-6 no-pad">
+					<button id="cancel-edit" class="btn btn-default btn-block">Cancel</button>
+				</div>
+			</div>
+
+			<!-- All these are in a div so they can be hidden during edit details -->
+			<div id="hide-when-edit">
+				<!-- Change Password -->
+				<div class="row">
+					<button id="changeroo" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#change-password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Change Password</button>
+				</div>
+				<!-- Edit Details and Delete Account -->
+				<div class="row">
+					<div class="col-sm-6 no-pad">
+						<button id="edit" class="btn btn-default btn-block"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Details</button>
+					</div>
+					<div class="col-sm-6 no-pad">
+						<button class="btn btn-danger btn-block" data-toggle="modal" data-target="#delete-confirm"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span> Delete Account</button>
+					</div>
+				</div>
+				<!-- Order history -->
+				<div class="row" id="historical">
+					<a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> View Order History</a>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
