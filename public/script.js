@@ -114,6 +114,10 @@ function setDescription(item) {
     }
 }
 
+function loginSuccessMessage() {
+	alert("Login Successful!");
+}
+
 function login(){
 	$.ajax({
 		type: "POST",
@@ -128,6 +132,7 @@ function login(){
     		console.log(user);
     		setUser(user);
     		clearLogin();
+				loginSuccessMessage();
     		// change login to log out
     		document.getElementById("nav-login").innerHTML = `<a onclick="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a>`
     		var event = new Event('user-status-change');
@@ -137,18 +142,20 @@ function login(){
     		console.log(err + "duh");
     	}
 	});
+
 	function clearLogin(){
 		 document.getElementById('email').value  = ''
     	 document.getElementById('password').value = ''
 	}
 }
 
-function displayLogoutMessage() {
+function logoutMessage() {
 	alert("Logout Successful!");
 }
 
 function logout(){
 	clearUser();
+	logoutMessage();
 	//change logout to login
 	document.getElementById("nav-login").innerHTML = `<a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a>`;
 	addPopOver();

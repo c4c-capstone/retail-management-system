@@ -43,6 +43,10 @@ router.get('/',function(req,res){
 		});
 });
 
+function loginFailMessage() {
+	alert("Incorrect Email Address or Password");
+}
+
 router.post('/login',function(req,res){
 	console.log(req.body);
 	Customer
@@ -58,8 +62,9 @@ router.post('/login',function(req,res){
 			else{
 				console.log('Seriously');
 				res.sendStatus(403);
-			}
-		})
+
+  }
+})
 		.catch(function(err){
 			console.log(err);
 			console.log('Seriously Bro');
