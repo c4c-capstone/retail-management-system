@@ -48,25 +48,31 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Name:</label>
                                 <div class="col-sm-9">
-                                    <input id="name" type="text" class="form-control">
+                                    <input id="name" type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" id="email" class="form-control">
+                                    <input type="email" id="email" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Password:</label>
                                 <div class="col-sm-9">
-                                    <input type="Password" id="password" class="form-control">
+                                    <input type="Password" id="password" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Re-enter Password:</label>
+                                <div class="col-sm-9">
+                                    <input type="Password" id="password" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Phone:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" id="phone" class="form-control">
+                                    <input type="number" id="phone" class="form-control" required>
                                 </div>
                             </div>
                             <hr>
@@ -74,23 +80,23 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Address:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" id="street" class="form-control">
+                                    <input type="text" id="street" class="form-control" required>
                                     <p class="form-text text-muted">Address Line 1</p>
                                     <input type="text" id="apt" class="form-control">
                                     <p class="form-text text-muted">Address Line 2</p>
                                     <div class="row">
                                         <div class="col-sm-9">
-                                            <input type="text" id="city" class="form-control">
+                                            <input type="text" id="city" class="form-control" required>
                                             <p class="form-text text-muted">City</p>
                                         </div>
                                         <div class="col-sm-3">
-                                            <input type="text" id="state" class="form-control" maxlength="2">
+                                            <input type="text" id="state" class="form-control" maxlength="2" required>
                                             <p class="form-text text-muted">State</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <input type="text" id="zip" class="form-control" maxlength="5">
+                                            <input type="number" id="zip" class="form-control" maxlength="5" required>
                                             <p class="form-text text-muted">Zipcode</p>
                                         </div>
                                     </div>

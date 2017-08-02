@@ -49,7 +49,6 @@ function createAccount(){
 	}
 		else {
 			displaySuccessMessage();
-			return;
 	}
 
 	var customer = {
@@ -155,12 +154,12 @@ function logoutMessage() {
 
 function logout(){
 	clearUser();
-	logoutMessage();
 	//change logout to login
 	document.getElementById("nav-login").innerHTML = `<a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a>`;
 	addPopOver();
 	var event = new Event('user-status-change');
 	window.dispatchEvent(event);
+	logoutMessage();
 }
 // function displayErr(){
 // 	return JSON.parse()
