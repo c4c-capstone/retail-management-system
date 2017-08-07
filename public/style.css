@@ -71,7 +71,7 @@ footer {
 }
 .price-table {
 	margin: 0;
-	
+
 }
 .popover-content {
 	text-align: center;
@@ -128,4 +128,22 @@ code {
 #historical {
     text-align: center;
     margin: 25px auto;
+}
+.coders-profile {
+    margin: 0 auto;
+    width: 300px;
+}
+#profiles {
+    margin-top: 40px;
+}
+.names {
+    color: #337ab7;
+    font-size: 25px;
+    text-align: center;
+}
+.profile-space {
+    margin-bottom: 25px;
+}
+#profiles img {
+    margin-bottom: 5px;
 }

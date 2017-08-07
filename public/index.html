@@ -19,20 +19,17 @@
         </script>
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <script type="text/javascript">
-
-			//Send email verification script
-
-			(function(){
+          //Send email verification script
+          (function(){
                 emailjs.init("user_NTVhN1j7qmnbtFBKDUC3e");
-            })();
-            function sendSignUp(emailAddress) {
-
-                console.log("Attempting to send email");
-                //emailjs.send("gmail", "signed_up", {"email":emailAddress});
-            }
+          })();
+          function sendSignUp(emailAddress) {
+            console.log("Attempting to send email");
+            //emailjs.send("gmail", "signed_up", {"email":emailAddress});
+          }
         </script>
     </head>
-    <body data-spy="scroll" data-target=".navbar">
+    <body>
         <!-- Sign Up Popup -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -107,14 +104,11 @@
                             <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             <button type="button" onclick="displaySuccessMessage(); createAccount(); sendSignUp();" data-dismiss="modal" class="btn btn-primary">Sign Up!</button>
                             <!-- <button type="button" onclick="createAccount();" class="btn btn-primary" data-dismiss="modal" id="sign-up-button">Sign Up!</button> -->
-
-
                         </div>
                     <!-- </form> -->
                 </div>
             </div>
         </div>
-
         <!-- Clothes Modal -->
         <div class="modal fade" id="buyItem" tabindex="-1" role="dialog" aria-labelledby="aLabel">
             <div class="modal-dialog" role="document" >
