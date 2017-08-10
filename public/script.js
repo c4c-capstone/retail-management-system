@@ -134,6 +134,7 @@ function login(){
 				loginSuccessMessage();
     		// change login to log out
     		document.getElementById("nav-login").innerHTML = `<a onclick="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a>`
+    		document.getElementById("signup-btn").innerHTML = `<a href="account.html"><span class="glyphicon glyphicon-user"></span> Profile</a>`
     		var event = new Event('user-status-change');
 			window.dispatchEvent(event);
     	},
@@ -182,7 +183,7 @@ function isUserLoggedIn(){
 
 window.addEventListener('user-status-change',function(){
 	if(isUserLoggedIn()){
-		hideSignUp();
+	//	hideSignUp();
 	}else{
 		showSignUp();
 	}
@@ -193,9 +194,9 @@ function showSignUp(){
 
 }
 
-function hideSignUp(){
-	document.getElementById('signup-btn').style['display']='none'
-}
+// function hideSignUp(){
+// 	document.getElementById('signup-btn').style['display']='none'
+// }
 
 function addPopOver(){
 	 $('[data-toggle="popover"]').popover({
