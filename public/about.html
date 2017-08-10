@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://use.fontawesome.com/04f13e5ca0.js"></script>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            addPopOver();
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      //Send email verification script
+      (function(){
+          emailjs.init("user_NTVhN1j7qmnbtFBKDUC3e");
+      })();
+      function sendSignUp(emailAddress) {
+        console.log("Attempting to send email");
+        //emailjs.send("gmail", "signed_up", {"email":emailAddress});
+      }
+    </script>
+    <!--Font awesome (needed for linkedin badge)-->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html" id="title">&lt;clothing-4-coders&gt;</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Shop</a></li>
+                <li class="active"><a href="about.html">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge" id="number-in-cart"></span></a></li>
+                <li id="signup-btn"><a href="#" role="button" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li id="nav-login"><a data-toggle="popover"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="profiles" class="row">
+        <div class="col-sm-4">
+            <div class="coders-profile">
+                <img class="profile-space" src="images/elle.jpg" width="300px">
+                <p class="names profile-space">Elle Folson</p>
+                <p class="profile-space">Bacon ipsum dolor amet tri-tip chicken meatball, landjaeger jowl
+                    spare ribs strip steak fatback rump bresaola ribeye pancetta.
+                    Venison kielbasa turkey drumstick shank. Meatloaf andouille
+                    leberkas beef, kielbasa beef ribs jerky hamburger swine. Beef
+                    ribs ham pork.</p>
+                <p class="profile-space"><a href="https://www.linkedin.com/in/elle-folson/"><i class="fa fa-linkedin-square" aria-hidden="true"></i> Connect with Elle on LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="coders-profile">
+                <img class="profile-space" src="images/brad.jpg" width="300px">
+                <p class="names profile-space">Brad Shubitowski</p>
+                <p class="profile-space">Crow's nest coxswain jack pirate boom booty fluke boatswain
+                    doubloon Shiver me timbers. Sloop brig reef sails log draft
+                    scuttle shrouds rum scuppers lookout. Lugsail plunder reef sails
+                    fire ship coffer dance the hempen jig gaff coxswain Barbary
+                    Coast hang the jib.</p>
+                <p class="profile-space"><a href="https://www.linkedin.com/in/brad-shubitowski-15b0b4140/"><i class="fa fa-linkedin-square" aria-hidden="true"></i> Connect with Brad on LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="coders-profile">
+                <img class="profile-space" src="images/james.jpg" width="100%">
+                <p class="names profile-space">James Thiede</p>
+                <p class="profile-space">Taiyaki godard paleo, austin tote bag single-origin coffee
+                    schlitz portland tumeric mustache gluten-free actually. Paleo
+                    bicycle rights enamel pin ugh. Echo park four dollar toast ramps
+                    8-bit, heirloom celiac meggings occupy cliche kitsch flexitarian
+                    wolf.</p>
+                <p class="profile-space"><a href="https://www.linkedin.com/in/james-thiede-454673144/"><i class="fa fa-linkedin-square" aria-hidden="true"></i> Connect with James on LinkedIn</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
