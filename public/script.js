@@ -29,9 +29,9 @@ function displayFailMessage() {
 	alert("Please use a valid email address!");
 }
 
-function displaySuccessMessage() {
+/*function displaySuccessMessage() {
   	alert("Account created successfully!");
-}
+}*/
 
 function createAccount(){
 
