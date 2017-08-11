@@ -82,7 +82,6 @@ function createAccount(){
     	  document.getElementById('city').value = ''
     	  document.getElementById('state').value = ''
     	  document.getElementById('zip').value = ''
-    	  //alert("Account Created!");
 
     	}
 
@@ -113,9 +112,9 @@ function setDescription(item) {
     }
 }
 
-function loginSuccessMessage() {
+/*function loginSuccessMessage() {
 	alert("Login Successful!");
-}
+}*/
 
 function login(){
 	$.ajax({
@@ -149,9 +148,9 @@ function login(){
 	}
 }
 
-function logoutMessage() {
+/*function logoutMessage() {
 	alert("Logout Successful!");
-}
+}*/
 
 function logout(){
 	clearUser();
